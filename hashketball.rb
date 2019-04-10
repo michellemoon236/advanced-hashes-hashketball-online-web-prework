@@ -1,4 +1,4 @@
-# Write your code here!
+ Write your code here!
 
 require 'pry'
 
@@ -176,6 +176,7 @@ end
 def player_numbers (team_name)
   numbers = []
   game_hash.each do |location, team_data|
+<<<<<<< HEAD
      team_data.each do |team_attribute, attribute_value|
        #binding.pry
        if team_attribute == :team_name && team_name == attribute_value
@@ -196,6 +197,20 @@ def player_numbers (team_name)
   end
   numbers
   #binding.pry
+=======
+     team_data.each do |attribute, data1|
+        if data1.class == Hash && team_name == game_hash[location][attribute]
+          binding.pry
+            data1.each do |name, data2|
+            #binding.pry
+            numbers << game_hash[location][attribute][name][:number]
+            binding.pry
+          end
+        end
+      end
+    end
+    numbers
+>>>>>>> f2faeb139cd667e04b6041d38e17770db6941bf0
 end
 
 def player_stats(player)
@@ -211,6 +226,7 @@ def player_stats(player)
 end
 
 def big_shoe_rebounds
+<<<<<<< HEAD
   shoes = []
   rebounds = ""
   game_hash.each do |location, team_data|
@@ -226,6 +242,9 @@ def big_shoe_rebounds
      end
   end
   rebounds
+=======
+  
+>>>>>>> f2faeb139cd667e04b6041d38e17770db6941bf0
 end
 
 
